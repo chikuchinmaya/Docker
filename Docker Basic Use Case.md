@@ -1,5 +1,6 @@
 # Docker Use Case
 
+
 1. Start Tomcat as a container in detached mode and map the Tomcat port 8080 with host port 5005.
 # docker run --name webapp -p 5005:8080 -d tomcat
 
