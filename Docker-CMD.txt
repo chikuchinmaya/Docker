@@ -1,0 +1,209 @@
+Install Docker in Linux Ubuntu :-
+------------------------------------
+https://get.docker.com/
+
+# To install the latest stable versions of Docker CLI, Docker Engine, and their
+# dependencies:
+#
+# 1. download the script
+#
+#   $ curl -fsSL https://get.docker.com -o install-docker.sh
+#
+# 2. verify the script's content
+#
+#   $ cat install-docker.sh
+#
+# 3. run the script with --dry-run to verify the steps it executes
+#
+#   $ sh install-docker.sh --dry-run
+#
+# 4. run the script either as root, or using sudo to perform the installation.
+#
+#   $ sudo sh install-docker.sh
+
+Install Docker in Linux Amazon2 or Centos :-
+---------------------------------------------
+sudo yum update -y
+sudo yum install -y docker
+sudo service docker start
+sudo systemctl start docker
+sudo systemctl enable docker
+
+sudo usermod -aG docker ec2-user
+docker --version
+
+DOCKER CMD
+----------
+docker run --name mysql -e MYSQL_ROOT_PASSWORD=admin -d mysql
+
+
+Importnat docker Commands
+==============================
+
+# Working on images
+--------------------------
+1 To download a docker image
+  docker pull <image_name>
+  
+2 To upload a docker images 
+  docker push <image_name>
+
+3 To see the list of docker images present in our docker host
+  docker images 
+(or)  
+  docker images ls
+ 
+4 To delete a docker image
+  docker rmi <image_ID/image_name>
+ 
+5 To Create docker image from a container
+  docker commit <container_id/container_name/new_image_name>
+
+6 To create a docker iamge from a docker file
+  docker build -t <new_image_name> .
+  Note :- . represnts current working directory
+7 To delete all unused docker images
+  docker system prune -a
+8 To save a docker images as tar or archived file 
+  docker same image1 iamge2 ....
+
+9 To get detaled info about a docker image
+  docker image inspect <image_name/image_id>
+
+# Working on containers
+--------------------------
+10 To see the list running containers
+   docker container ls
+   
+11 To see the list of all containers (Running and stoped)
+   docker ps -a
+   
+12 To start a stoped container
+   docker start <container_name/container_id>  
+   
+13 To stop a running container   
+   docker stop <container_name/container_id>
+   
+14 To restart a container
+   docker restart <container_name/container_id> 
+   To restart after 20 sec
+   docker restart -t 20 <container_name/container_id>
+   
+15 To delete a stoped container
+   docker rm <container_name/container_id>   
+   
+16 To delete a running container 
+   docker rm -f <container_name/container_id>   
+   
+17 To stop all running container
+   docker stop $ (docker ps -aq)
+  
+18 To delete all stoped containers 
+   docker rm $(docker ps -aq)
+   
+19 To delete all container (running and stoped)
+   docker rm -f $ (docker ps -aq)
+ 
+20 To get detailed log of container
+   docker logs <container_name/container_id>
+   
+21 To see complete info about a container
+   docker inspect <container_name/container_id>
+   
+22 To see the ports used by a container
+   docker port <container_name/container_id>
+   
+23 To come out of a container with out exit
+   ctrl+p,ctrl+q
+   
+24 To go back into the same container
+   docker attach <container_name/container_id>
+   
+25* To create a container
+    docker run image
+	
+# Run command options
+ -----------------------------------
+  --name    Gives a name to the container
+  -d        Run the container in derached mod in background(as a deamon)
+  -it       Used for opening interactive terminals in the containers
+  -link     Used for linking multiple contaners to create micro services atchitectecture
+  --network Used for running containers on a specifi network
+  -e        Used for passing enviroments variables to container 
+  -v        Used for attahing volume to container
+  --volumes-from Used for sharing volumes between containers
+  -p Used for port mapping ie it will map the container port with the docker host port so that   
+     it can used for external communication
+  -P Used for automatic port mapping.The internal port of the container will be automatically 
+     mapped with some port on docker host which is greater than 30000
+  -m Used for spcifing an upper limit on the memory that the container can use
+  -c Used to allocate spcifing number of cps;s to a container
+  -h Used for spcifing a host name for the contaier
+  -rm To delete a contaner exit
+  
+# Working on docker network
+-------------------------------
+26 To see the lis of all the docker networks 
+   docker network ls
+
+27 To create a new docker network
+   docker network create --driver driver_name network_name	
+   
+28 To get detailed info about a network
+   docker network inspect <network_name/network_ID>
+   
+29 To delete a network 
+   docker network rm <network_name/network_ID>  
+   
+30 To attach a running contaier to a network 
+   docker network connect <network_name/network_ID> <container_name/container_id>
+   
+31 To disconnect a containers for a network
+   docker network disconnect <network_name/network_ID> <container_name/container_id>
+
+# Working on docker volumes
+------------------------------
+32 To see the list of docker volumes
+   docker volume ls
+   
+33 To create a volume 
+   docker volume create <volume_name>   
+   
+34 To get detailed info about a docker volume
+   docker volume inspect volume_name/volume_id
+   
+35 To delete a volume 
+   docker volume rm <volume_name/volume_id>   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
