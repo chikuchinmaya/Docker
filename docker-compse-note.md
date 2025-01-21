@@ -37,6 +37,7 @@ vim docker-compose.yml
 ```
 
 ```bash
+
 services:
 
   wordpress:
@@ -62,7 +63,7 @@ services:
 
     ```
 	
-
+-----------------------------------------------------------------
 *To Create the architecture and running in the background.*
 	
 ```bash
