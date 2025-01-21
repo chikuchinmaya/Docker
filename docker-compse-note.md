@@ -28,7 +28,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 ```
 
-1. ** Create a Docker Compose file for linking a mysql container with a wordpress container.*
+1.  **Create a Docker Compose file for linking a mysql container with a wordpress container.*
 
 * Create and edit file docker-compose.yml.
 
@@ -62,7 +62,7 @@ services:
     ```
 	
 
-* To Create the architecture and running in the background*
+*To Create the architecture and running in the background.*
 	
 ```bash 
 docker-compose up -d 
