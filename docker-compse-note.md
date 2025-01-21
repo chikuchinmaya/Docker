@@ -64,7 +64,7 @@ services:
 
 *To Create the architecture and running in the background.*
 	
-```bash 
+```bash
 docker-compose up -d 
 ```
 	
