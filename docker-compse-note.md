@@ -61,7 +61,7 @@ services:
       MYSQL_PASSWORD: chiku
       MY_SQL_ROOT_PASSWORD: chiku
 
-    ```
+```
 	
 -----------------------------------------------------------------
 *To Create the architecture and running in the background.*
